@@ -12,4 +12,8 @@ class Categorie extends Model
         "nomcategorie",
         "imagecategorie"
     ];
+    public function scategories()
+    {
+        return $this->hasMany(Scategorie::class ,"categorieID");
+    }
 }
