@@ -82,6 +82,7 @@ class ScategorieController extends Controller
             return response()->json("Suppression impossible {$e->getMessage()}");
         }
     }
+    
     public function showSCategorieByCAT($idcat)
     {
         try {
@@ -90,5 +91,6 @@ class ScategorieController extends Controller
         } catch (\Exception $e) {
             return response()->json("Selection impossible {$e->getMessage()}");
         }
-}
+    }
+    
 }

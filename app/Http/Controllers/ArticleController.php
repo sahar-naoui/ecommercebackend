@@ -83,11 +83,28 @@ class ArticleController extends Controller
             return response()->json("probleme de suppression de catégorie {$e->getMessage()}");
         }
     }
+
     public function showArticlesBySCAT($idscat)
     {
         try {
             $articles= Article::where('scategorieID', $idscat)->with('scategorie')->get();
             return response()->json($articles);
+        } catch (\Exception $e) {
+            return response()->json("Selection impossible {$e->getMessage()}");
+        }
+    }
+
+    public function articlesPaginate()
+    {
+        try {
+            $perPage = request()->input('pageSize', 2);
+            // Récupère la valeur dynamique pour la pagination
+            $articles = Article::with('scategorie')->paginate($perPage);
+            // Retourne le résultat en format JSON API
+            return response()->json([
+            'products' => $articles->items(), // Les articles paginés
+            'totalPages' => $articles->lastPage(), // Le nombre de pages
+            ]);
         } catch (\Exception $e) {
             return response()->json("Selection impossible {$e->getMessage()}");
         }

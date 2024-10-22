@@ -13,7 +13,7 @@
     "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "true",
-    "APP_URL": "https://vercel.com/new/sahars-projects-f1aaf531",
+    "APP_URL": "https://vercel.com/sahars-projects-f1aaf531",
     "APP_KEY": "base64:SAA+hvLCR8Kg7DraFckgm35BAFlssW/TmpsW8WcXyK4=",
     "APP_CONFIG_CACHE": "/tmp/config.php",
     "APP_EVENTS_CACHE": "/tmp/events.php",
